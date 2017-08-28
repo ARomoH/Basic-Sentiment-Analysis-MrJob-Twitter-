@@ -1,6 +1,6 @@
 # Basic-Sentiment-Analysis-MrJob-Twitter
 Sentiment Analysis using dictionary implemented in MrJob. It can be executed in local or HDFS enviroments (such as Hadoop or AWS).
-Real tweets are been downloaded through link:https://dev.twitter.com/rest/public[Twitter_API]. Steps taken:
+Real tweets are been downloaded through [Twitter API](https://dev.twitter.com/rest/public). Steps taken:
 - Information of location was obtained and tweets with USA location were selected.
 - State gather must be real (States-USA.csv).
 - Dictionary (AFINN-111.txt) with vocabulary was consulted for transforming each word in a number wich getting sentiment of words.
