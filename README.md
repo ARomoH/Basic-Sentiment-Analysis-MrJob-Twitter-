@@ -13,7 +13,7 @@ For executions in local:
 python Twitter_MR.py data/data_example.json > data/output_example.txt
 ```
 
-For executions in AWS:
+For AWS executions using EMR:
 ```
 python Twitter_MR.py -r emr "path_s3_tweets" --output-dir="output_s3_AWS" --conf-path mrjob.conf --states="path of States-USA.csv" --dic="path of AFINN-111.txt"
 ```
