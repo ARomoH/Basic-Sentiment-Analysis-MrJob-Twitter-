@@ -1,5 +1,5 @@
 # Basic-Sentiment-Analysis-MrJob-Twitter
-Project developed to make an sentiment analysis using dictionary implemented with MrJob with a map-reduce model. It can be executed locally or in HDFS enviroments (such as Hadoop or AWS). Real tweets are been downloaded through [Twitter API](https://dev.twitter.com/rest/public).
+Project developed to make an sentiment analysis using dictionary implemented with MrJob applying a map-reduce model. It can be executed locally or in HDFS enviroments (such as Hadoop or AWS). Real tweets are been downloaded through [Twitter API](https://dev.twitter.com/rest/public).
 
 ## Stages of project
 Steps dones:
