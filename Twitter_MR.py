@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 28 18:51:44 2017
-
-@author: ARH
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Wed Dec 07 12:23:15 2016
 
 """
@@ -16,6 +9,7 @@ import csv
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 
+############## DEFINITION OF METHODS ##############
 def filter_tweets(line):
     # (Retweets) If there is not retweet field, it produces a error for handling a exepction
     try:
@@ -25,7 +19,7 @@ def filter_tweets(line):
     # All tweets has not location information
     if retweet is not None:
         retweet = retweet.get('country_code')
-        # El país debe ser Estados Unidos
+        # Country must be United States
         if retweet != "US":
             return None
     # (Tweets) Same proccess as Retweets.
@@ -36,9 +30,7 @@ def filter_tweets(line):
             return None
     else:
         return None
-        
-    
-   # Tweet Language must be English
+    # Tweet Language must be English
     if line.get('lang') != "en":
         return None
 
@@ -78,11 +70,11 @@ def tweet_value(line):
     for word in tweet.split():
         if word in word_value:
             sum_values += word_value[word]
-
     return sum_values
     
+    
+############## MRJOB CLASS ##############   
 class TweetCount(MRJob):
-
    def configure_options(self):
       # Options for executions in HDFS enviroments
       super(TweetCount, self).configure_options()
@@ -116,6 +108,8 @@ class TweetCount(MRJob):
           suma += v
       yield key, (suma, total, float(suma)/float(total))
       
+        
+############## MAIN CLASS ##############      
 if __name__ == '__main__':
    usa_states = dict()
    with open('data/States-USA.csv', 'r') as csvfile:
